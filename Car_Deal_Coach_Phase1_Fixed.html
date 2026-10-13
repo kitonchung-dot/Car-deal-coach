@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1f3a">
+<title>Car Deal Coach — Know the Real Cost Before You Buy</title>
+<style>
+:root{--navy:#102746;--blue:#1671e8;--blue2:#eaf3ff;--ink:#15263f;--muted:#61728a;--line:#dce5ef;--bg:#f4f7fb;--green:#07895d;--red:#c0392b;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,72px);gap:20px;position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy);font-weight:850;font-size:21px;letter-spacing:-.5px}.brand-icon{width:43px;height:35px;color:var(--blue)}.brand span span{color:var(--blue)}.tagline{display:block;font-size:10px;letter-spacing:.15px;font-weight:600;color:var(--muted);margin-top:-3px}
+nav{display:flex;gap:25px;align-items:center}nav a{font-size:13px;color:#314761;text-decoration:none;font-weight:700}nav a:hover{color:var(--blue)}.country{font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap}
+.hero{background:linear-gradient(100deg,#eaf4ff 0%,#f8fbff 45%,#d7e9f7 100%);overflow:hidden;position:relative}
+.hero-inner{max-width:1220px;margin:auto;padding:58px 28px 52px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:22px;min-height:360px}
+.hero h1{font-size:clamp(35px,4.2vw,55px);line-height:1.04;letter-spacing:-1.7px;color:var(--navy);margin:0 0 17px;max-width:570px}.hero p{font-size:16px;color:#405774;max-width:550px;margin:0 0 20px}.checks{display:grid;gap:9px;font-size:14px;font-weight:600}.checks span:before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#d3f6e8;color:var(--green);margin-right:9px;font-weight:900}
+.hero-art{min-height:230px;position:relative;display:grid;place-items:center}.sun{position:absolute;width:230px;height:230px;background:#c7e2f7;border-radius:50%;right:12%;top:0;opacity:.7}.road{position:absolute;bottom:12px;left:0;right:-30px;height:66px;background:linear-gradient(180deg,#c5d4e0,#aebfce);transform:skewY(-5deg);border-radius:50%}.car{position:relative;z-index:1;width:min(100%,500px);filter:drop-shadow(0 18px 12px #17345225)}.hero-note{position:absolute;right:0;top:5px;color:#294e77;font-size:13px;font-weight:800;transform:rotate(5deg)}
+.features{background:#fff;border-bottom:1px solid var(--line)}.feature-grid{max-width:1220px;margin:auto;padding:25px 20px;display:grid;grid-template-columns:repeat(4,1fr)}.feature{padding:4px 17px;text-align:center;border-right:1px solid var(--line)}.feature:last-child{border:0}.bubble{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;margin:0 auto 9px;background:var(--blue2);color:var(--blue);font-size:22px;font-weight:900}.feature:nth-child(2) .bubble{background:#f0eaff;color:#8050d7}.feature:nth-child(3) .bubble{background:#dff8ed;color:var(--green)}.feature:nth-child(4) .bubble{background:#fff0e5;color:#d36b22}.feature h3{font-size:14px;margin:0 0 5px;color:var(--navy)}.feature p{font-size:12px;color:var(--muted);margin:0}
+main{max-width:1220px;margin:25px auto 55px;padding:0 20px}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px;box-shadow:0 5px 22px #1b385408}.panel-heading{display:flex;gap:12px;align-items:center;margin-bottom:5px}.panel-heading .bubble{margin:0;flex-shrink:0}.panel h2{font-size:20px;color:var(--navy);margin:0;letter-spacing:-.4px}.sub{font-size:12px;color:var(--muted);margin:0 0 20px}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 12px}.field label{display:block;font-size:11px;font-weight:800;color:#4d6078;margin-bottom:6px}.input-wrap{display:flex;align-items:center;border:1px solid #cfdae7;border-radius:7px;background:#fff;min-width:0;overflow:hidden}.input-wrap:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px #1671e81a}.input-wrap .prefix,.input-wrap .suffix{padding:0 9px;color:#75859b;font-size:12px;white-space:nowrap}.input-wrap input,.input-wrap select{width:100%;min-width:0;border:0;outline:0;padding:11px 8px;font:inherit;font-size:13px;color:var(--ink);background:transparent}.input-wrap select{padding-right:2px}.primary{width:100%;border:0;border-radius:8px;background:var(--blue);color:white;font-size:14px;font-weight:800;padding:13px 18px;cursor:pointer;margin-top:17px;box-shadow:0 5px 12px #1671e826}.primary:hover{background:#075fcf}.result{margin-top:15px;background:linear-gradient(135deg,#f2f8ff,#f8fbff);border:1px solid #dcecff;border-radius:11px;padding:17px}.result-label{font-size:13px;font-weight:800;color:var(--navy)}.payment{font-size:34px;line-height:1.2;font-weight:900;letter-spacing:-1px;color:var(--blue);margin:5px 0 18px}.payment small{font-size:14px;letter-spacing:0}.payment-secondary{font-size:23px;font-weight:800;letter-spacing:-.4px;color:var(--navy);margin-top:8px}.payment-secondary small{font-size:12px;font-weight:600;color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{border-right:1px solid #dce5ef;padding-right:8px}.stat:last-child{border:0}.stat span{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.stat strong{font-size:15px;color:var(--navy)}.disclaimer{font-size:10px;color:#617d9f;margin:14px 0 0}.compare-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.deal-box{border:1px solid var(--line);border-radius:10px;overflow:hidden}.deal-box h3{font-size:13px;margin:0;padding:8px 11px;background:#e8f3ff;color:#0967d2}.deal-box:nth-child(2) h3{background:#f2eaff;color:#7540c7}.deal-fields{padding:10px;display:grid;gap:8px}.deal-fields .field label{font-size:10px;margin-bottom:4px}.deal-fields .input-wrap input{padding:8px 5px;font-size:12px}.deal-fields .prefix,.deal-fields .suffix{padding:0 5px;font-size:10px}.compare-results{margin-top:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}.compare-results h3{font-size:12px;background:#f1f6fc;margin:0;padding:10px 12px}.compare-results table{width:100%;border-collapse:collapse;font-size:11px}.compare-results th,.compare-results td{padding:9px 8px;border-bottom:1px solid #edf1f6;text-align:right}.compare-results th:first-child,.compare-results td:first-child{text-align:left}.compare-results th{font-size:10px;color:#526680}.diff{font-weight:800;color:var(--red)}.winner{padding:11px;background:#e6f9ef;color:#08764f;font-size:11px;font-weight:800}.guides{margin-top:22px}.guides-top{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:12px}.guides-top h2{margin:0;font-size:20px;color:var(--navy)}.guides-top p{margin:2px 0 0;font-size:12px;color:var(--muted)}.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.guide{background:white;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;gap:11px}.guide .bubble{margin:0;flex-shrink:0;width:37px;height:37px;font-size:18px}.guide h3{font-size:13px;margin:0 0 4px;color:var(--navy)}.guide p{font-size:11px;color:var(--muted);margin:0 0 8px}.guide button{border:0;background:none;padding:0;color:var(--blue);font-size:11px;font-weight:800;cursor:pointer}.guide-detail{display:none;margin-top:12px;padding:17px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:13px}.guide-detail.show{display:block}.guide-detail h3{margin-top:0;color:var(--navy)}footer{background:#0d203b;color:#dbe6f4;padding:25px clamp(20px,5vw,72px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footbrand{font-size:16px;font-weight:850}.footbrand small{display:block;font-size:10px;font-weight:500;color:#a9bbd0}footer a{color:#dbe6f4;text-decoration:none;font-size:11px;margin:0 8px}footer p{font-size:10px;color:#a9bbd0;max-width:320px;margin:0}.mobile-menu{display:none}
+@media(max-width:850px){nav{gap:12px}.hero-inner{grid-template-columns:1fr;padding-top:42px;gap:0}.hero-art{min-height:170px}.sun{width:170px;height:170px}.road{height:45px}.car{width:min(100%,430px)}.hero-note{right:8%;top:0}.workspace{grid-template-columns:1fr}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:repeat(2,1fr);row-gap:22px}.feature:nth-child(2){border:0}.guide-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){header{height:62px;padding:0 14px}.brand{font-size:17px}.brand-icon{width:34px}.tagline{font-size:9px}nav{gap:0}nav a{display:none}nav a:nth-child(2){display:block;font-size:12px}.country{display:none}.hero-inner{padding:36px 20px 20px}.hero h1{font-size:39px}.hero p{font-size:14px}.hero-art{min-height:150px}.feature-grid{padding:20px 8px;gap:18px 0}.feature{padding:0 9px}.feature h3{font-size:12px}.feature p{font-size:11px}.panel{padding:16px}.panel h2{font-size:18px}.fields{gap:11px 8px}.field label{font-size:10px}.input-wrap input,.input-wrap select{font-size:12px;padding:10px 5px}.input-wrap .prefix,.input-wrap .suffix{padding:0 5px}.compare-pair{gap:7px}.deal-fields{padding:7px}.compare-results th,.compare-results td{padding:8px 5px;font-size:10px}.stats{gap:5px}.stat strong{font-size:13px}.guide-grid{grid-template-columns:1fr}.guides-top{align-items:start;flex-direction:column}main{padding:0 12px}.payment{font-size:31px}}
+.error-message{color:#ad2634;font-size:12px;font-weight:700;margin:9px 0 0;min-height:0}.input-wrap.invalid{border-color:#c0392b;background:#fff5f5}.result[aria-invalid="true"]{border-color:#c0392b}.note-small{font-size:11px;color:#61728a;line-height:1.55;margin:10px 0 0}.cost-row{font-size:12px;color:#405774;margin:8px 0}.cost-row strong{color:#102746} @media(max-width:520px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.compare-results{overflow-x:auto}.compare-results table{min-width:350px}.field label{font-size:11px}.input-wrap input,.input-wrap select{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="#home" aria-label="Car Deal Coach home">
+<svg class="brand-icon" viewBox="0 0 64 48" fill="none" aria-hidden="true"><path d="M12 28l5-13c1-3 4-5 7-5h17c3 0 6 2 7 5l5 13" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M7 28h50v12H7z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><circle cx="17" cy="39" r="5" fill="currentColor"/><circle cx="47" cy="39" r="5" fill="currentColor"/><path d="M22 14h20l4 12H18z" fill="currentColor" opacity=".18"/></svg>
+<span>Car Deal <span>Coach</span><small class="tagline">Better Deals. Smarter Decisions.</small></span>
+</a>
+<nav><a href="#home">Home</a><a href="#calculator">Calculator</a><a href="#compare">Compare Deals</a><a href="#guides">Guides</a></nav>
+<div class="country">🇨🇦 Canada ▾</div>
+</header>
+<section class="hero" id="home">
+<div class="hero-inner">
+<div><h1>Know the Real Cost Before You Buy.</h1><p>Compare car financing options, understand your total costs, and make smarter decisions — all in one place.</p><div class="checks"><span>Calculate your monthly payment</span><span>Compare two deals side by side</span><span>See the full cost, not just the monthly payment</span></div></div>
+<div class="hero-art" aria-label="Illustration of a car beside a mountain road">
+<div class="sun"></div><div class="road"></div><div class="hero-note">More clarity.<br>Less stress.</div>
+<svg class="car" viewBox="0 0 560 280" role="img" aria-label="Dark blue SUV illustration"><defs><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#294966"/><stop offset=".55" stop-color="#102b43"/><stop offset="1" stop-color="#071725"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a9c9dc"/><stop offset="1" stop-color="#43677e"/></linearGradient></defs><ellipse cx="285" cy="234" rx="220" ry="19" fill="#1b3d57" opacity=".18"/><path d="M62 181l23-42c7-12 18-20 34-24l70-16 50-53c8-8 18-12 31-12h96c17 0 31 7 43 20l41 48 41 17c12 5 20 15 23 28l6 34-18 28H72z" fill="url(#body)" stroke="#0a1b2b" stroke-width="4"/><path d="M204 102l45-47c5-5 12-8 20-8h38v55z" fill="url(#glass)" stroke="#7898ad" stroke-width="3"/><path d="M318 47h44c10 0 19 4 27 13l35 42H318z" fill="url(#glass)" stroke="#7898ad" stroke-width="3"/><path d="M79 165l37-29 34-4-19 27-52 17z" fill="#d7f2ff"/><path d="M438 139l46 18 9 17-52-4z" fill="#e3f4ff"/><path d="M184 106l-16 68M315 106v70M430 107l23 69" stroke="#5e7c91" stroke-width="3"/><path d="M173 180h278" stroke="#68859b" stroke-width="3" opacity=".6"/><path d="M104 190h352l-14 20H92z" fill="#071521"/><circle cx="164" cy="205" r="36" fill="#0a121b"/><circle cx="164" cy="205" r="22" fill="#9fb0bb"/><circle cx="164" cy="205" r="12" fill="#31495b"/><circle cx="426" cy="205" r="36" fill="#0a121b"/><circle cx="426" cy="205" r="22" fill="#9fb0bb"/><circle cx="426" cy="205" r="12" fill="#31495b"/><path d="M230 177h77" stroke="#d2e0e9" stroke-width="3" opacity=".7"/><rect x="258" y="185" width="51" height="10" rx="3" fill="#e6eef4"/><path d="M64 181l18 8 3 12H66z" fill="#f5fbff"/></svg>
+</div>
+</div>
+</section>
+<section class="features"><div class="feature-grid">
+<div class="feature"><div class="bubble">▦</div><h3>Monthly &amp; Bi-weekly Payment Calculator</h3><p>Get estimated monthly and bi-weekly payments in seconds.</p></div>
+<div class="feature"><div class="bubble">⇄</div><h3>Compare Two Deals</h3><p>See the real difference in total cost and interest.</p></div>
+<div class="feature"><div class="bubble">▤</div><h3>Deal Breakdown</h3><p>Understand your taxes and financing numbers.</p></div>
+<div class="feature"><div class="bubble">▣</div><h3>Car Buying Guides</h3><p>Simple explanations to help you buy with confidence.</p></div>
+</div></section>
+<main>
+<div class="workspace">
+<section class="panel" id="calculator">
+<div class="panel-heading"><div class="bubble">▦</div><h2>Payment Calculator</h2></div><p class="sub">Enter the details below to estimate monthly and bi-weekly payments.</p>
+<div class="fields">
+<div class="field"><label for="price">Vehicle Price (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="price" type="number" min="0" step="100" value="35000"></div></div>
+<div class="field"><label for="down">Down Payment</label><div class="input-wrap"><span class="prefix">$</span><input id="down" type="number" min="0" step="100" value="5000"></div></div>
+<div class="field"><label for="trade">Trade-in Allowance</label><div class="input-wrap"><span class="prefix">$</span><input id="trade" type="number" min="0" step="100" value="0"></div></div>
+<div class="field"><label for="tradePayout">Trade-in Loan Payout</label><div class="input-wrap"><span class="prefix">$</span><input id="tradePayout" type="number" min="0" step="100" value="0"></div></div>
+<div class="field"><label for="fees">Fees &amp; Add-ons (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="fees" type="number" min="0" step="100" value="0"></div></div>
+<div class="field"><label for="rate">Interest Rate (APR)</label><div class="input-wrap"><input id="rate" type="number" min="0" max="50" step=".1" value="5.9"><span class="suffix">%</span></div></div>
+<div class="field"><label for="term">Loan Term</label><div class="input-wrap"><input id="term" type="number" min="12" max="120" step="12" value="60"><span class="suffix">months</span></div></div>
+<div class="field"><label for="province">Province / Tax</label><div class="input-wrap"><select id="province"><option value="5">Alberta (5% GST)</option><option value="12">British Columbia (12% est.)</option><option value="13">Ontario (13% HST)</option><option value="15">Nova Scotia (15% HST)</option><option value="15">New Brunswick (15% HST)</option><option value="15">Newfoundland & Labrador (15% HST)</option><option value="14.975">Quebec (14.975% est.)</option><option value="11">Saskatchewan (11% est.)</option><option value="12">Manitoba (12% est.)</option><option value="15">Prince Edward Island (15% HST)</option></select></div></div>
+</div>
+<p class="note-small">Trade-in allowance and outstanding loan payout are separate. Taxes are estimated on vehicle price plus taxable fees; provincial trade-in tax credits are not automatically applied. Regular bi-weekly = 26 payments/year.</p><button class="primary" id="calculate">Calculate My Payment</button>
+<div class="error-message" id="mainError" role="alert"></div><div class="result" id="mainResult" aria-live="polite"><div class="result-label">Your Estimated Payments</div><div class="payment" id="monthly">$573 <small>/ month</small><div class="payment-secondary" id="biweekly">$264 <small>/ bi-weekly</small></div></div><div class="cost-row" id="mainTradeBreakdown"></div><div class="stats"><div class="stat"><span>Amount Financed</span><strong id="financed">$30,000</strong></div><div class="stat"><span>Total Interest</span><strong id="interest">$4,380</strong></div><div class="stat"><span>Total Repayment</span><strong id="repayment">$34,380</strong></div></div><p class="note-small" id="mainTotalsNote">Total interest and repayment below use monthly payments; bi-weekly interest differs.</p><p class="disclaimer">ⓘ Estimate only. Actual taxes, fees, lender terms, credit approval and payment timing can change your numbers. Trade-in tax treatment may vary by province and deal.</p></div>
+
+<div style="border-top:1px solid var(--line);margin-top:22px;padding-top:20px">
+  <div class="panel-heading"><div class="bubble">↶</div><h2>Reverse Calculator</h2></div>
+  <p class="sub">Choose a payment frequency, enter what you can afford, and estimate the vehicle price that fits.</p>
+  <div class="fields">
+    <div class="field"><label for="reverseFrequency">Payment Frequency</label><div class="input-wrap"><select id="reverseFrequency"><option value="monthly">Monthly</option><option value="biweekly">Bi-weekly</option></select></div></div>
+    <div class="field"><label for="targetPayment" id="targetPaymentLabel">Target Monthly Payment</label><div class="input-wrap"><span class="prefix">$</span><input id="targetPayment" type="number" min="0" step="10" value="600"></div></div>
+    <div class="field"><label for="reverseRate">Interest Rate (APR)</label><div class="input-wrap"><input id="reverseRate" type="number" min="0" max="50" step=".1" value="5.9"><span class="suffix">%</span></div></div>
+    <div class="field"><label for="reverseTerm">Loan Term</label><div class="input-wrap"><input id="reverseTerm" type="number" min="12" max="120" step="12" value="60"><span class="suffix">months</span></div></div>
+    <div class="field"><label for="reverseDown">Down Payment</label><div class="input-wrap"><span class="prefix">$</span><input id="reverseDown" type="number" min="0" step="100" value="5000"></div></div>
+    <div class="field"><label for="reverseTrade">Net Trade-in Equity (can be negative)</label><div class="input-wrap"><span class="prefix">$</span><input id="reverseTrade" type="number" step="100" value="0"></div></div>
+    <div class="field"><label for="reverseFees">Fees &amp; Add-ons (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="reverseFees" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="reverseTax">Province / Tax</label><div class="input-wrap"><select id="reverseTax"><option value="5">Alberta (5% GST)</option><option value="12">British Columbia (12% est.)</option><option value="13">Ontario (13% HST)</option><option value="15">HST province (15%)</option><option value="14.975">Quebec (14.975% est.)</option><option value="11">Saskatchewan (11% est.)</option><option value="12">Manitoba (12% est.)</option></select></div></div>
+  </div>
+  <p class="note-small">Net trade equity = allowance − existing loan payout. Negative equity reduces the affordable vehicle price. Taxes estimated on vehicle plus fees, without provincial trade-in credits.</p><div class="error-message" id="reverseError" role="alert"></div><button class="primary" id="reverseCalculate">Calculate Affordable Vehicle Price</button>
+  <div class="result" id="reverseResult" aria-live="polite">
+    <div class="result-label">Estimated Vehicle Price Before Tax</div>
+    <div class="payment" id="reversePrice">$36,800</div><div class="stats" style="margin-bottom:12px"><div class="stat"><span>Estimated Monthly Payment</span><strong id="reverseMonthly">$600</strong></div><div class="stat"><span>Estimated Bi-weekly Payment</span><strong id="reverseBiweekly">$277</strong></div><div class="stat"><span>Selected Frequency</span><strong id="reverseSelectedFrequency">Monthly</strong></div></div>
+    <div class="stats">
+      <div class="stat"><span>Amount Financed</span><strong id="reverseFinanced">$31,800</strong></div>
+      <div class="stat"><span>Total Interest</span><strong id="reverseInterest">$4,900</strong></div>
+      <div class="stat"><span>Total Repayment</span><strong id="reverseRepayment">$36,000</strong></div>
+    </div>
+    <p class="disclaimer">Estimate only. Assumes a standard amortizing loan and applies the selected tax rate to the vehicle price. Tax credits and lender-specific terms are not included. Displayed repayment and interest use the selected payment frequency.</p>
+  </div>
+</div>
+</section>
+<section class="panel" id="compare">
+<div class="panel-heading"><div class="bubble">⇄</div><h2>Compare Two Deals</h2></div><p class="sub">Enter two offers to see which one may cost less overall.</p>
+<div class="compare-pair">
+<div class="deal-box"><h3>Deal A</h3><div class="deal-fields">
+<div class="field"><label for="aPrice">Vehicle Price (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="aPrice" type="number" min="0" value="35000"></div></div>
+<div class="field"><label for="aDown">Down Payment</label><div class="input-wrap"><span class="prefix">$</span><input id="aDown" type="number" min="0" value="5000"></div></div>
+<div class="field"><label for="aTrade">Trade-in Allowance</label><div class="input-wrap"><span class="prefix">$</span><input id="aTrade" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="aPayout">Trade-in Loan Payout</label><div class="input-wrap"><span class="prefix">$</span><input id="aPayout" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="aFees">Fees &amp; Add-ons (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="aFees" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="aRate">Interest Rate (APR)</label><div class="input-wrap"><input id="aRate" type="number" min="0" max="50" step=".1" value="5.9"><span class="suffix">%</span></div></div>
+<div class="field"><label for="aTerm">Loan Term</label><div class="input-wrap"><input id="aTerm" type="number" min="12" max="120" step="12" value="60"><span class="suffix">mo</span></div></div>
+</div></div>
+<div class="deal-box"><h3>Deal B</h3><div class="deal-fields">
+<div class="field"><label for="bPrice">Vehicle Price (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="bPrice" type="number" min="0" value="35000"></div></div>
+<div class="field"><label for="bDown">Down Payment</label><div class="input-wrap"><span class="prefix">$</span><input id="bDown" type="number" min="0" value="5000"></div></div>
+<div class="field"><label for="bTrade">Trade-in Allowance</label><div class="input-wrap"><span class="prefix">$</span><input id="bTrade" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="bPayout">Trade-in Loan Payout</label><div class="input-wrap"><span class="prefix">$</span><input id="bPayout" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="bFees">Fees &amp; Add-ons (before tax)</label><div class="input-wrap"><span class="prefix">$</span><input id="bFees" type="number" min="0" value="0"></div></div>
+<div class="field"><label for="bRate">Interest Rate (APR)</label><div class="input-wrap"><input id="bRate" type="number" min="0" max="50" step=".1" value="6.9"><span class="suffix">%</span></div></div>
+<div class="field"><label for="bTerm">Loan Term</label><div class="input-wrap"><input id="bTerm" type="number" min="12" max="120" step="12" value="60"><span class="suffix">mo</span></div></div>
+</div></div>
+</div>
+<div class="field" style="margin-top:12px"><label for="compareTax">Apply estimated sales tax to both deals</label><div class="input-wrap"><select id="compareTax"><option value="5">Alberta — 5%</option><option value="12">British Columbia — 12% estimate</option><option value="13">Ontario — 13%</option><option value="15">HST province — 15%</option><option value="14.975">Quebec — 14.975% estimate</option><option value="11">Saskatchewan — 11% estimate</option><option value="12">Manitoba — 12% estimate</option></select></div></div>
+<p class="note-small">Compare total acquisition cost (all loan payments + down payment), not just loan repayment. No automatic trade-in tax credits. Vehicle and fee taxes are estimates.</p><div class="error-message" id="compareError" role="alert"></div><button class="primary" id="compareButton">Compare Offers</button>
+<div class="compare-results" id="compareResult"><h3>Comparison Results</h3><table><thead><tr><th>Cost</th><th>Deal A</th><th>Deal B</th><th>Difference</th></tr></thead><tbody>
+<tr><td>Monthly Payment</td><td id="aMonthly">$573</td><td id="bMonthly">$588</td><td id="dMonthly" class="diff">—</td></tr>
+<tr><td>Total Interest</td><td id="aInterest">$4,380</td><td id="bInterest">$5,280</td><td id="dInterest" class="diff">—</td></tr>
+<tr><td>Amount Financed</td><td id="aFinanced">—</td><td id="bFinanced">—</td><td id="dFinanced">—</td></tr>
+<tr><td>Total Acquisition Cost*</td><td id="aAcquisition">—</td><td id="bAcquisition">—</td><td id="dAcquisition">—</td></tr>
+<tr><td>Total Repayment</td><td id="aTotal">$34,380</td><td id="bTotal">$35,280</td><td id="dTotal" class="diff">—</td></tr>
+</tbody></table><div class="winner" id="winner">Run a comparison to see the estimated difference.</div></div>
+<p class="note-small">*Total acquisition cost = loan repayment + down payment. Excludes insurance, fuel, maintenance and any non-financed expenses. Compare like-for-like offers.</p><p class="disclaimer">For a fair comparison, confirm both quotes include the same fees, add-ons, tax treatment, and loan assumptions.</p>
+</section>
+</div>
+<section class="guides" id="guides"><div class="guides-top"><div><h2>Car Buying Guides</h2><p>Understand the numbers before you sign.</p></div></div>
+<div class="guide-grid">
+<article class="guide"><div class="bubble">▤</div><div><h3>Understanding Car Loans</h3><p>How interest rates and loan terms affect your total cost.</p><button data-guide="loan">Read guide →</button></div></article>
+<article class="guide"><div class="bubble">⇄</div><div><h3>Trade-in Guide</h3><p>Questions to ask and how to compare trade-in offers.</p><button data-guide="trade">Read guide →</button></div></article>
+<article class="guide"><div class="bubble">⬡</div><div><h3>Avoiding Negative Equity</h3><p>What it means to owe more than your vehicle is worth.</p><button data-guide="equity">Read guide →</button></div></article>
+</div>
+<div class="guide-detail" id="guideDetail" aria-live="polite"></div>
+</section>
+</main>
+<footer><div class="footbrand">🚘 Car Deal Coach<small>Better Deals. Smarter Decisions.</small></div><div><a href="#home">Home</a><a href="#calculator">Calculator</a><a href="#compare">Compare Deals</a><a href="#guides">Guides</a></div><p>This tool provides estimates for educational purposes only. Verify all details with your lender and dealership.</p></footer>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const money = n => new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+const money0 = n => new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(n);
+const guideText={
+ loan:{title:'Understanding Car Loans',body:'A lower monthly payment does not always mean a cheaper deal. Compare APR, loan term, financed fees, total repayment and total acquisition cost. Payments here are estimates, not lender quotes.'},
+ trade:{title:'Trade-in Guide',body:'Separate trade-in allowance from the exact outstanding loan payout. Net trade-in equity is allowance minus payout. Trade-in tax credits depend on province, vehicle and transaction and are not applied by this simplified calculator.'},
+ equity:{title:'Avoiding Negative Equity',body:'Negative equity means the existing loan payout exceeds trade-in allowance. That difference is rolled into the new loan if financed, increasing the amount borrowed and the interest paid.'}
+};
+function numeric(id,{min=0,max=100000000,integer=false}={}){
+ const el=$(id),raw=el.value.trim(),v=Number(raw);
+ if(!raw||!Number.isFinite(v)||v<min||v>max||(integer&&!Number.isInteger(v))){
+   el.closest('.input-wrap')?.classList.add('invalid');throw new Error(`${el.labels?.[0]?.textContent||id}: enter a valid number between ${min} and ${max}.`);
+ }
+ el.closest('.input-wrap')?.classList.remove('invalid');return v;
+}
+function readLoan(prefix){
+ return {price:numeric(prefix+'Price'),down:numeric(prefix+'Down'),trade:numeric(prefix+'Trade'),payout:numeric(prefix+'Payout'),fees:numeric(prefix+'Fees'),apr:numeric(prefix+'Rate',{max:50}),term:numeric(prefix+'Term',{min:12,max:120,integer:true})};
+}
+function amortized(principal,apr,term,frequency){
+ const periods=frequency==='monthly'?term:term*26/12;
+ if(!Number.isInteger(periods))throw new Error('Loan term must produce a whole number of payments.');
+ const r=apr/100/(frequency==='monthly'?12:26);
+ const payment=principal===0?0:r===0?principal/periods:principal*r/(-Math.expm1(-periods*Math.log1p(r)));
+ return {payment,periods,total:payment*periods,interest:payment*periods-principal};
+}
+function financed(x,tax){
+ // Taxes on vehicle and taxable fees; no trade-in tax credit assumed.
+ const beforeTax=x.price+x.fees;
+ const taxAmount=beforeTax*tax/100;
+ const netEquity=x.trade-x.payout;
+ const raw=beforeTax+taxAmount-x.down-netEquity;
+ if(raw<0)throw new Error('Down payment and trade-in equity exceed the estimated purchase cost. Reduce the inputs.');
+ return {principal:raw,taxAmount,netEquity};
+}
+function run(errorId,resultId,fn){
+ try{$(errorId).textContent='';$(resultId).setAttribute('aria-invalid','false');fn();}
+ catch(e){$(errorId).textContent=e.message;$(resultId).setAttribute('aria-invalid','true');}
+}
+function calcMain(){run('mainError','mainResult',()=>{
+ const x={price:numeric('price'),down:numeric('down'),trade:numeric('trade'),payout:numeric('tradePayout'),fees:numeric('fees'),apr:numeric('rate',{max:50}),term:numeric('term',{min:12,max:120,integer:true})};
+ const f=financed(x,numeric('province',{max:30}));
+ const m=amortized(f.principal,x.apr,x.term,'monthly'),b=amortized(f.principal,x.apr,x.term,'biweekly');
+ $('monthly').innerHTML=`${money(m.payment)} <small>/ month</small><div class="payment-secondary">${money(b.payment)} <small>/ regular bi-weekly</small></div>`;
+ $('financed').textContent=money(f.principal);$('interest').textContent=money(m.interest);$('repayment').textContent=money(m.total);
+ $('mainTradeBreakdown').textContent=`Estimated tax: ${money(f.taxAmount)} · Net trade equity: ${money(f.netEquity)}`;
+ $('mainTotalsNote').textContent=`Monthly: ${money(m.interest)} interest / ${money(m.total)} repayment. Regular bi-weekly: ${money(b.interest)} interest / ${money(b.total)} repayment.`;
+});}
+function updateReverseLabel(){const b=$('reverseFrequency').value==='biweekly';$('targetPaymentLabel').textContent=b?'Target Bi-weekly Payment':'Target Monthly Payment';$('targetPayment').step=b?'5':'10';}
+function reverseCalc(){run('reverseError','reverseResult',()=>{
+ const target=numeric('targetPayment'),apr=numeric('reverseRate',{max:50}),term=numeric('reverseTerm',{min:12,max:120,integer:true}),down=numeric('reverseDown'),trade=numeric('reverseTrade',{min:-100000000}),fees=numeric('reverseFees'),tax=numeric('reverseTax',{max:30});
+ const freq=$('reverseFrequency').value,periods=freq==='monthly'?term:term*26/12;
+ if(!Number.isInteger(periods))throw new Error('Loan term must produce a whole number of payments.');
+ const r=apr/100/(freq==='monthly'?12:26);
+ const principal=r===0?target*periods:target*(-Math.expm1(-periods*Math.log1p(r)))/r;
+ const price=(principal+down+trade)/(1+tax/100)-fees;
+ if(price<0)throw new Error('These inputs do not support a non-negative vehicle price.');
+ const m=amortized(principal,apr,term,'monthly'),b=amortized(principal,apr,term,'biweekly');
+ const selected=freq==='monthly'?m:b;
+ $('reversePrice').textContent=money(price);$('reverseFinanced').textContent=money(principal);
+ $('reverseInterest').textContent=money(selected.interest);$('reverseRepayment').textContent=money(selected.total);
+ $('reverseMonthly').textContent=money(m.payment);$('reverseBiweekly').textContent=money(b.payment);
+ $('reverseSelectedFrequency').textContent=freq==='monthly'?'Monthly':'Regular bi-weekly';
+});}
+function calcCompare(){run('compareError','compareResult',()=>{
+ const tax=numeric('compareTax',{max:30}),a=readLoan('a'),b=readLoan('b');
+ const fa=financed(a,tax),fb=financed(b,tax),ma=amortized(fa.principal,a.apr,a.term,'monthly'),mb=amortized(fb.principal,b.apr,b.term,'monthly');
+ const ac=ma.total+a.down,bc=mb.total+b.down;
+ const rows=[['Monthly',ma.payment,mb.payment],['Interest',ma.interest,mb.interest],['Total',ma.total,mb.total],['Financed',fa.principal,fb.principal],['Acquisition',ac,bc]];
+ for(const [key,va,vb] of rows){$('a'+key).textContent=money(va);$('b'+key).textContent=money(vb);$('d'+key).textContent=(vb>=va?'+':'−')+money(Math.abs(vb-va));}
+ const delta=bc-ac;
+ $('winner').textContent=Math.abs(delta)<0.01?'These offers have approximately equal total acquisition cost.':`Deal ${delta>0?'A':'B'} has the lower estimated total acquisition cost by ${money(Math.abs(delta))}.`;
+});}
+$('calculate').addEventListener('click',calcMain);$('compareButton').addEventListener('click',calcCompare);$('reverseCalculate').addEventListener('click',reverseCalc);
+$('reverseFrequency').addEventListener('change',()=>{updateReverseLabel();reverseCalc();});
+['price','down','trade','tradePayout','fees','rate','term','province'].forEach(id=>$(id).addEventListener('change',calcMain));
+['targetPayment','reverseRate','reverseTerm','reverseDown','reverseTrade','reverseFees','reverseTax'].forEach(id=>$(id).addEventListener('change',reverseCalc));
+['aPrice','aDown','aTrade','aPayout','aFees','aRate','aTerm','bPrice','bDown','bTrade','bPayout','bFees','bRate','bTerm','compareTax'].forEach(id=>$(id).addEventListener('change',calcCompare));
+document.querySelectorAll('[data-guide]').forEach(btn=>btn.addEventListener('click',()=>{const g=guideText[btn.dataset.guide];const box=$('guideDetail');box.innerHTML=`<h3>${g.title}</h3><p>${g.body}</p>`;box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'nearest'});}));
+updateReverseLabel();calcMain();calcCompare();reverseCalc();
+</script>
+</body>
+</html>
